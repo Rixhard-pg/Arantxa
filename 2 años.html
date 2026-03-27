@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra Historia </title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5e6e8, #d8c3a5);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.pantalla { display: none; padding: 20px; }
+.activa { display: block; }
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 40px auto;
+  border-radius: 20px;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 12px 20px;
+  background: #6d4c41;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.caja {
+  background: #efebe9;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+  min-height: 80px;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.galeria img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  margin: 5px;
+  object-fit: cover;
+  display:flex;
+  
+}
+
+.final-img {
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  color: #6d4c41;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INICIO -->
+<div id="inicio" class="pantalla activa">
+  <div class="card">
+    <h1>Arantxa </h1>
+    <p>Tengo algo que ensenarte.</p>
+    <button onclick="ir('parte1')">Empezar </button>
+  </div>
+</div>
+
+<!-- PARTE 1 -->
+<div id="parte1" class="pantalla">
+  <div class="card">
+    <h2>Amorchito</h2>
+    <div class="caja"><p id="texto1"></p></div>
+    <button onclick="ir('parte2')">Siguiente </button>
+  </div>
+</div>
+
+<!-- PARTE 2 -->
+<div id="parte2" class="pantalla">
+  <div class="card">
+    <h2> Amorchito</h2>
+    <div class="caja"><p id="texto2"></p></div>
+    <button onclick="ir('parte3')">Siguiente </button>
+  </div>
+</div>
+
+<!-- PARTE 3 -->
+<div id="parte3" class="pantalla">
+  <div class="card">
+    <h2>Nuestro tiempo </h2>
+    <p id="contador"></p>
+    <button onclick="ir('parte4')">Siguiente </button>
+  </div>
+</div>
+
+<!-- PARTE 4 -->
+<div id="parte4" class="pantalla">
+  <div class="card">
+    <h2>Gracias por todo </h2>
+    <div class="caja"><p id="texto3"></p></div>
+    <button onclick="ir('parte5')">Siguiente </button>
+  </div>
+</div>
+
+<!-- FOTOS -->
+<div id="parte5" class="pantalla">
+  <div class="card">
+    <h2>Un poco de nosotros jeje</h2>
+    <div class="galeria">
+      <img src="chuli.jpeg">
+	  <p> Chuliii mi nina </p>
+      <img src="Beso.jpeg">
+	  <p> Bechitooooooo</p>
+      <img src="mona.jpeg">
+	  <P> Mas mona mi nina enfadica </p>
+      <img src="Mirada.jpeg">
+	  <p>Esa miradita q enamora jejeje</p>
+	   <img src="nosotros.jpeg">
+	   <p> Ya me vas a reganar jooooo</p> 
+    </div>
+    <button onclick="ir('parte6')">Siguiente </button>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div id="parte6" class="pantalla">
+  <div class="card">
+    <h1 id="teamo"></h1>
+    <img src="Navidad.jpeg" class="final-img">
+    <button onclick="ir('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+<script>
+// Navegacion
+function ir(pantalla) {
+  document.querySelectorAll(".pantalla").forEach(p => p.classList.remove("activa"));
+  document.getElementById(pantalla).classList.add("activa");
+
+  if (pantalla === "parte1") escribirTexto("texto1", texto1);
+  if (pantalla === "parte2") escribirTexto("texto2", texto2);
+  if (pantalla === "parte4") escribirTexto("texto3", texto3);
+  if (pantalla === "parte6") escribirTexto("teamo", "TE AMO ", 120);
+}
+
+// Textos (TU TEXTO MEJORADO)
+const texto1 = `Desde que llegaste a mi vida, todo tiene mas sentido. 
+Tus risas se han vuelto mi cancion favorita (le has quitado el sitio a Anuel),
+y tus abrazos el refugio mas calido que uno puede tener.
+
+Cada dia es un capitulo mas, y hoy hacemos dos anos,
+y seguimos escribiendo juntos una historia
+cuyo unico final sea la muerte
+y ni aun asi seria el final.
+
+Porque incluso entonces seguiriamos viviendo
+en los recuerdos del otro, y lo mantendriamos nuestro amor vivo.
+
+No ha sido dificil construir lo nuestro,
+pero si aprender a sobrellevarlo,
+y aun asi seguimos luchando,
+con paciencia y millones de pequenos detalles
+que demuestran lo mucho que nos queremos.
+
+Te amo `;
+
+const texto2 = `Hemos pasado por mucho¡K
+muchas risas, muchos lloros
+y momentos donde hemos estado muy mal.
+
+Pero aqui seguimos.
+
+Y quiero que siga asi mucho mas tiempo,
+que tengamos nuestra casa,
+que cumplamos nuestros suenos juntos,
+agarrados de la mano.
+
+Formar nuestra familia,
+recorrer el mundo,
+hacer todo lo que sonamos
+y guardar cada momento en nuestros recuerdos.
+
+Porque aun nos queda muchisimo por vivir `;
+
+const texto3 = `Gracias por estos dos anos.
+por cada momento, cada risa
+y cada cosa que hemos vivido juntos.
+
+Eres una de las mejores cosas
+que me han pasado en la vida.
+
+Y quiero seguir viviendo mil cosas mas contigo.
+
+Gracias por ser tu,
+y por elegirme cada dia.
+
+Simplemente
+GRACIAS `;
+
+// Efecto escribir
+function escribirTexto(id, texto, velocidad = 80) {
+  let i = 0;
+  const el = document.getElementById(id);
+  el.innerHTML = "";
+
+  function escribir() {
+    if (i < texto.length) {
+      el.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escribir, velocidad);
+    }
+  }
+  escribir();
+}
+
+// Contador
+const fechaInicio = new Date("2024-03-24");
+
+function actualizarContador() {
+  const ahora = new Date();
+  const diff = ahora - fechaInicio;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("contador").innerHTML =
+    dias + " dias, " + horas + " horas, " + minutos + " minutos ";
+}
+
+setInterval(actualizarContador, 1000);
+
+
+</script>
+
+</body>
+</html>
